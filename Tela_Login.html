@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<title>Tela de Login</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f7d08a;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .login-container {
+        background-color: #fffbeb;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.25);
+        text-align: center;
+    }
+    input[type="text"],
+    input[type="password"],
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        box-sizing: border-box; /* Garante que o padding não aumentará a largura total */
+    }
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+        outline: none;
+        border-color: #6c63ff;
+    }
+    input[type="submit"] {
+        background-color: #e1a95f;
+        color: white;
+        cursor: pointer;
+        box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.25);
+    }
+</style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Tela de Login</h2>
+    <form action="C:\Users\Jaiel\OneDrive\Área de Trabalho\Projeto faculdade\cardapio.html" method="POST">
+        <input type="text" id="usuario" name="usuario" placeholder="E-mail, CPF ou Telefone" required>
+        <input type="password" id="senha" name="senha" placeholder="Senha" required>
+        <input type="submit" value="Entrar">
+    </form>
+</div>
+
+</body>
+</html>
