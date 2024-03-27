@@ -5,7 +5,7 @@
 <title>Lanchonete</title>
 <style>
     body {
-        background-color: #f7d08a; /* Cor de fundo amarela */
+        background-color: #ff7f7f; /* Cor de fundo vermelha */
         font-family: Arial, sans-serif;
         display: flex;
         flex-direction: column;
@@ -20,9 +20,13 @@
         padding: 20px;
         border-radius: 5px; /* Bordas arredondadas */
         box-shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.25); /* Sombra para as caixas */
-        background-color: #fffbeb; /* Fundo claro para contraste */
+        background-color: #ffe6e6; /* Fundo claro para contraste */
         width: 300px; /* Largura fixa para as caixas */
         text-align: center;
+        transition: box-shadow 0.3s ease-in-out; /* Transição suave para a sombra */
+    }
+    .botao-iniciar:hover, .info:hover {
+        box-shadow: 6px 6px 7px 0 rgba(0, 0, 0, 0.45); /* Sombra maior ao passar o mouse */
     }
     .botao-iniciar button {
         padding: 10px 20px;
@@ -30,7 +34,7 @@
         cursor: pointer; /* Cursor em forma de mão ao passar sobre o botão */
         border: none;
         border-radius: 5px;
-        background-color: #e1a95f; /* Cor de fundo marrom claro para o botão */
+        background-color: #ff4d4d; /* Cor de fundo vermelho para o botão */
         color: white; /* Cor do texto do botão */
         box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.25); /* Sombra para o botão */
     }
