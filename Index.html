@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<title>Lanchonete</title>
+<style>
+    body {
+        background-color: #f7d08a; /* Cor de fundo amarela */
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .botao-iniciar, .info {
+        border: 2px solid black; /* Bordas pretas */
+        margin: 10px;
+        padding: 20px;
+        border-radius: 5px; /* Bordas arredondadas */
+        box-shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.25); /* Sombra para as caixas */
+        background-color: #fffbeb; /* Fundo claro para contraste */
+        width: 300px; /* Largura fixa para as caixas */
+        text-align: center;
+    }
+    .botao-iniciar button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer; /* Cursor em forma de mão ao passar sobre o botão */
+        border: none;
+        border-radius: 5px;
+        background-color: #e1a95f; /* Cor de fundo marrom claro para o botão */
+        color: white; /* Cor do texto do botão */
+        box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.25); /* Sombra para o botão */
+    }
+    a {
+        text-decoration: none; /* Remove o sublinhado dos links */
+        color: black; /* Cor do texto dos links */
+    }
+    a:hover {
+        color: #555; /* Cor do texto dos links ao passar o mouse */
+    }
+</style>
+<script>
+function iniciarPedido() {
+    window.location.href = "iniciar-pedido.html"; // Redireciona para a página iniciar-pedido.html
+}
+</script>
+</head>
+<body>
+
+<!-- Botão para iniciar o pedido -->
+<div class="botao-iniciar">
+    <button onclick="iniciarPedido()">Iniciar o Pedido</button>
+</div>
+
+<!-- Endereço com link para o Google Maps -->
+<div class="info">
+    <p>Endereço: <a href="https://maps.app.goo.gl/ntSYEjiHQKQoR4uQ6" target="_blank">Av. Dr. Adolpho Pinto, 109 - Barra Funda, São Paulo - SP, 01156-050</a></p>
+</div>
+
+<!-- Número de telefone com link para o WhatsApp -->
+<div class="info">
+    <p>Telefone: <a href="https://wa.me/5511999999999" target="_blank">+55 11 99999-9999</a></p>
+</div>
+
+</body>
+</html>
