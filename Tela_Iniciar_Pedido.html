@@ -5,7 +5,7 @@
 <title>Redirecionamento - Lanchonete</title>
 <style>
     body {
-        background-color: #ffe082; /* Cor de fundo amarela */
+        background-color: #ff7f7f; /* Cor de fundo vermelha */
         font-family: Arial, sans-serif;
         display: flex;
         justify-content: center;
@@ -14,25 +14,30 @@
         margin: 0;
     }
     .container {
-        background-color: #fffbeb; /* Fundo claro para contraste */
+        background-color: #ffe6e6; /* Fundo claro para contraste */
         padding: 20px;
         border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+        box-shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.25); /* Sombra para as caixas */
         text-align: center;
         width: 400px;
+        transition: box-shadow 0.3s ease-in-out; /* Transição suave para a sombra */
+    }
+    .container:hover {
+        box-shadow: 6px 6px 7px 0 rgba(0, 0, 0, 0.45); /* Sombra maior ao passar o mouse */
     }
     .button {
         display: inline-block;
-        background-color: #e1a95f;
+        background-color: #ff4d4d; /* Cor de fundo vermelho para o botão */
         color: white;
         padding: 10px 20px;
         border-radius: 5px;
         margin: 10px;
         cursor: pointer;
         text-decoration: none;
+        box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.25); /* Sombra para o botão */
     }
     .button:hover {
-        background-color: #c6903a;
+        background-color: #c73838; /* Cor de fundo mais escura ao passar o mouse */
     }
 </style>
 </head>
