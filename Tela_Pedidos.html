@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tela de Controle de Pedidos</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .pedido {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    .pedido-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .pedido-acao {
+        margin-left: 10px;
+        padding: 5px 10px;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    #listaPedidos {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+    }
+</style>
+</head>
+<body>
+    <h1>Tela de Controle de Pedidos</h1>
+    <div id="listaPedidos"></div>
+
+    <script>
+        // Simulação de pedidos recebidos
+        const pedidosRecebidos = [
+            { numero: 1, nome: 'Cliente 1', pedido: 'Hamburguer X-Salada', valor: 15.90 },
+            { numero: 2, nome: 'Cliente 2', pedido: 'Pizza Calabresa', valor: 29.90 },
+            { numero: 3, nome: 'Cliente 3', pedido: 'Refrigerante Coca-Cola', valor: 4.50 },
+            { numero: 4, nome: 'Cliente 4', pedido: 'Batata Frita', valor: 12.00 }
+        ];
+
+        // Função para renderizar a lista de pedidos
+        function renderizarPedidos() {
+            const listaPedidos = document.getElementById('listaPedidos');
+            listaPedidos.innerHTML = '';
+
+            pedidosRecebidos.forEach(pedido => {
+                const divPedido = document.createElement('div');
+                divPedido.classList.add('pedido');
+
+                const divPedidoInfo = document.createElement('div');
+                divPedidoInfo.classList.add('pedido-info');
+                divPedidoInfo.innerHTML = `
+                    <span>Pedido ${pedido.numero}</span>
+                    <span>${pedido.nome} - ${pedido.pedido} (R$ ${pedido.valor.toFixed(2)})</span>
+                `;
+
+                const inputTempo = document.createElement('input');
+                inputTempo.type = 'number';
+                inputTempo.placeholder = 'Tempo de preparo (min)';
+                inputTempo.classList.add('tempo-preparo');
+
+                const botaoPronto = document.createElement('button');
+                botaoPronto.textContent = 'Pronto';
+                botaoPronto.classList.add('pedido-acao');
+                botaoPronto.addEventListener('click', () => pedidoPronto(pedido.numero));
+
+                divPedido.appendChild(divPedidoInfo);
+                divPedido.appendChild(inputTempo);
+                divPedido.appendChild(botaoPronto);
+
+                listaPedidos.appendChild(divPedido);
+            });
+        }
+
+        // Função para marcar o pedido como pronto e atualizar a tela do cliente
+        function pedidoPronto(numeroPedido) {
+            const tempoPreparo = document.querySelector(`.pedido${numeroPedido} .tempo-preparo`).value;
+            // Aqui você pode enviar o tempo de preparo para a tela do cliente
+            console.log(`Pedido ${numeroPedido} pronto em ${tempoPreparo} min`);
+            // Simulando remoção do pedido da lista após ser preparado
+            const indexPedido = pedidosRecebidos.findIndex(pedido => pedido.numero === numeroPedido);
+            if (indexPedido !== -1) {
+                pedidosRecebidos.splice(indexPedido, 1);
+                renderizarPedidos();
+            }
+        }
+
+        // Inicialização da tela
+        renderizarPedidos();
+    </script>
+</body>
+</html>
