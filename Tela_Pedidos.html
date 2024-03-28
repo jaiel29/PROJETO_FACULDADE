@@ -7,12 +7,23 @@
 <style>
     body {
         font-family: Arial, sans-serif;
+        background-color: #FF7F7F; /* Cor padrão para o fundo */
+        color: #000000; /* Cor padrão para o texto */
+    }
+    h1 {
+        text-align: center; /* Centralizando o texto */
     }
     .pedido {
         border: 1px solid #ccc;
         border-radius: 5px;
         padding: 10px;
         margin-bottom: 10px;
+        background-color: #FFFFFF; /* Fundo branco para os pedidos */
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3); /* Sombra ao redor do pedido */
+        transition: box-shadow 0.3s ease; /* Transição suave para a sombra */
+    }
+    .pedido:hover {
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* Aumenta a sombra ao passar o mouse */
     }
     .pedido-info {
         display: flex;
@@ -27,6 +38,10 @@
         border: none;
         border-radius: 3px;
         cursor: pointer;
+        transition: background-color 0.3s ease; /* Transição suave para a cor de fundo do botão */
+    }
+    .pedido-acao:hover {
+        background-color: #45a049; /* Cor do botão ao passar o mouse */
     }
     #listaPedidos {
         max-width: 800px;
@@ -73,6 +88,7 @@
                 botaoPronto.textContent = 'Pronto';
                 botaoPronto.classList.add('pedido-acao');
                 botaoPronto.addEventListener('click', () => pedidoPronto(pedido.numero));
+                botaoPronto.setAttribute('disabled', ''); // Botão inicialmente desativado
 
                 divPedido.appendChild(divPedidoInfo);
                 divPedido.appendChild(inputTempo);
