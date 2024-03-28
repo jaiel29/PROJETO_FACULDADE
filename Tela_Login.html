@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>Tela de Login</title>
 <style>
-    body {
+     body {
         font-family: Arial, sans-serif;
         background-color: #FF7F7F; /* Alterado para um tom de vermelho suavizado */
         display: flex;
@@ -50,12 +50,21 @@
         box-shadow: 0 0 10px #FF7F7F; /* Alterada a sombra ao passar o mouse */
     }
 </style>
+<script>
+    function redirecionar() {
+        var usuario = document.getElementById('usuario').value;
+        var senha = document.getElementById('senha').value;
+        if (usuario && senha) {
+            window.location.href = "https://jaiel29.github.io/PROJETO_FACULDADE/Tela_Cardapio_Pedido.html";
+        }
+    }
+</script>
 </head>
 <body>
 
 <div class="login-container">
     <h2>Tela de Login</h2>
-    <form action="https://jaiel29.github.io/PROJETO_FACULDADE/Tela_Cardapio_Pedido.html" method="POST">
+    <form onsubmit="event.preventDefault(); redirecionar();">
         <input type="text" id="usuario" name="usuario" placeholder="E-mail, CPF ou Telefone" required>
         <input type="password" id="senha" name="senha" placeholder="Senha" required>
         <input type="submit" value="Entrar">
