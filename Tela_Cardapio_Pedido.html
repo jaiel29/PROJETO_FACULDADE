@@ -114,7 +114,7 @@
         <p>R$ <span id="totalValor">0.00</span></p>
     </div>
 
-    <form id="pedido" action="link_para_enviar_pedido" method="post">
+    <form id="formPedido" onsubmit="enviarPedido(); return false;">
         <input type="submit" value="Enviar Pedido">
     </form>
 
@@ -138,6 +138,10 @@
                 total += preco * quantidade;
             }
             document.getElementById('totalValor').innerText = total.toFixed(2);
+        }
+
+        function enviarPedido() {
+            window.location.href = "https://jaiel29.github.io/PROJETO_FACULDADE/Tela_Pedidos.html";
         }
     </script>
 </body>
