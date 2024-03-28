@@ -6,7 +6,7 @@
 <title>Cadastro de Cliente - Lanchonete</title>
 <style>
     body {
-        background-color: #ff0000; /* Cor de fundo alterada para vermelho */
+        background-color: #ff7f7f; /* Cor de fundo alterada para vermelho mais leve */
         font-family: Arial, sans-serif;
         display: flex;
         justify-content: center;
@@ -19,7 +19,7 @@
         background-color: #fff0f5; /* Fundo claro para contraste */
         padding: 20px;
         border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(255, 0, 0, 0.1), 0 1px 3px rgba(255, 0, 0, 0.08); /* Sombra vermelha */
+        box-shadow: 0 4px 6px rgba(255, 127, 127, 0.1), 0 1px 3px rgba(255, 127, 127, 0.08); /* Sombra vermelha mais leve */
         text-align: center;
         width: 400px;
     }
@@ -29,21 +29,21 @@
         margin: 10px 0;
         border-radius: 5px;
         border: 1px solid #ddd;
-        box-shadow: 0 2px 4px rgba(255, 0, 0, 0.1); /* Sombra vermelha */
+        box-shadow: 0 2px 4px rgba(255, 127, 127, 0.1); /* Sombra vermelha mais leve */
     }
     input:focus {
         outline: none;
-        border-color: #ff0000; /* Cor da borda ao focar */
-        box-shadow: 0 0 10px #ff0000; /* Adiciona sombra ao focar */
+        border-color: #ff7f7f; /* Cor da borda ao focar */
+        box-shadow: 0 0 10px #ff7f7f; /* Adiciona sombra ao focar */
     }
     button[type="submit"] {
-        background-color: #ff0000; /* Cor de fundo alterada para vermelho */
+        background-color: #ff7f7f; /* Cor de fundo alterada para vermelho mais leve */
         color: white;
         cursor: pointer;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 4px rgba(127, 63, 63, 0.2), 0 1px 2px rgba(127, 63, 63, 0.1);
     }
     button[type="submit"]:hover {
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ao passar o mouse */
+        box-shadow: 0 4px 8px rgba(127, 63, 63, 0.2), 0 2px 4px rgba(127, 63, 63, 0.1); /* Sombra ao passar o mouse */
     }
     /* Estilo para caixa de informações */
     .info-box {
@@ -53,14 +53,14 @@
         border-radius: 5px;
         background-color: #fff; /* Fundo branco */
         border: 1px solid #ccc; /* Borda cinza claro */
-        box-shadow: 0 2px 4px rgba(255, 0, 0, 0.1); /* Sombra vermelha */
+        box-shadow: 0 2px 4px rgba(255, 127, 127, 0.1); /* Sombra vermelha mais leve */
     }
     .info-box p {
         margin: 0;
     }
     h1 {
         text-align: center;
-        color: #ff0000; /* Cor vermelha */
+        color: #ff7f7f; /* Cor vermelha mais leve */
     }
 </style>
 
@@ -183,7 +183,7 @@ function handleFormSubmit(event) {
         <input type="text" id="telefone" placeholder="Telefone com código do país e área" pattern="\+\d{2}\s\d{2}\s\d{8,9}" required>
         <input type="text" id="email" name="email" placeholder="E-mail" required>
         <input type="password" id="senha" placeholder="Senha" required>
-        <div id="erroSenha" style="display:none; color:red;">Por favor, insira uma senha.</div>
+        <div id="erroSenha" style="display:none; color:#ff7f7f;">Por favor, insira uma senha.</div>
         <input type="text" id="cep" placeholder="CEP" onblur="preencherEndereco(this.value)" required>
         <!-- Campos adicionais -->
         <input type="text" id="endereco" placeholder="Endereço" readonly>
@@ -193,7 +193,7 @@ function handleFormSubmit(event) {
         <input type="text" id="cidade" placeholder="Cidade" readonly>
         <input type="text" id="estado" placeholder="Estado" readonly>
         <input type="text" id="pais" placeholder="País" readonly>
-        <button type="submit">Criar cadastro</button>
+        <button type="submit" style="background-color: #ff7f7f;">Criar cadastro</button>
     </div>
 </form>
 
