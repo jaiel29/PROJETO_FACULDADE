@@ -156,11 +156,24 @@ function validarFormulario() {
     // Adicionar outras validações se necessário ok
     return true;
 }
+
+// Função para lidar com o envio do formulário
+function handleFormSubmit(event) {
+    event.preventDefault(); // Impede o envio normal do formulário
+
+    if (!validarFormulario()) {
+        return;
+    }
+
+    // Aqui você pode fazer o que quiser com os dados do formulário
+    // Por exemplo, redirecionar para outra página
+    window.location.href = "https://jaiel29.github.io/PROJETO_FACULDADE/Tela_Cardapio_Pedido.html";
+}
 </script>
 </head>
 <body>
 
-<form action="https://jaiel29.github.io/PROJETO_FACULDADE/Tela_Cardapio_Pedido.html" method="post" onsubmit="return validarFormulario()">
+<form onsubmit="handleFormSubmit(event)">
     <div class="cadastro-container">
         <!-- <h1>Cadastro</h1> -->
         <h2 style="margin-bottom: 20px;">Cadastro de Cliente</h2>
