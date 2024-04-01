@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Confirmação de Pedido</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #FF7F7F; /* Cor de fundo padrão */
+        color: #000000; /* Cor do texto padrão */
+    }
+    .container {
+        max-width: 800px;
+        margin: auto; /* Centralizando a tela */
+        padding: 20px;
+        text-align: center; /* Centralizando o conteúdo */
+    }
+    .box {
+        border: 1px solid black;
+        padding: 20px;
+        margin-bottom: 20px;
+        transition: box-shadow 0.3s ease-in-out;
+    }
+    .box:hover {
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+    }
+    .c-loader {
+        animation: is-rotating 1s infinite;
+        border: 6px solid #e5e5e5;
+        border-radius: 50%;
+        border-top-color: #51d4db;
+        height: 50px;
+        width: 50px;
+        margin: 0 auto; /* Centralizando a animação */
+    }
+    @keyframes is-rotating {
+        to {
+            transform: rotate(1turn);
+        }
+    }
+    .preparando-anime {
+        font-size: 24px;
+        color: #FF4500; /* Cor laranja para o texto animado */
+        animation: pulse 1s infinite alternate; /* Animação de pulso */
+    }
+    @keyframes pulse {
+        from {
+            transform: scale(1);
+        }
+        to {
+            transform: scale(1.1);
+        }
+    }
+    .pedido-mais input[type="submit"] {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .pedido-mais input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h1>Seu pedido foi efetuado com sucesso!</h1>
+            <!-- Informações herdadas da tela anterior -->
+            <div class="pedido-info">
+                <p>Número do Pedido: <strong>123456</strong></p> <!-- Inserir número do pedido dinamicamente -->
+                <p>Cliente: <strong>Nome do Cliente</strong></p> <!-- Inserir nome do cliente dinamicamente -->
+            </div>
+        </div>
+        <div class="box">
+            <div class="pedido-resumo">
+                <h2>Resumo do Pedido</h2>
+                <p>Pedido: Hamburguer X-Salada</p> <!-- Resumo do pedido dinâmico -->
+                <p>Forma de Pagamento: Dinheiro</p> <!-- Forma de pagamento dinâmica -->
+                <p>Tempo de Preparo Estimado: <span id="tempoPreparo">10</span> minutos</p> <!-- Tempo de preparo dinâmico -->
+            </div>
+        </div>
+        <div class="box">
+            <p><strong class="preparando-anime">Preparando pedido...</strong></p> <!-- Animação de preparando pedido -->
+            <div class="c-loader"></div> <!-- Animação de carregamento -->
+        </div>
+        <div class="box">
+            <div class="pedido-mais">
+                <h2>Precisa de mais alguma coisa?</h2>
+                <form action="#">
+                    <input type="submit" value="Pedir Mais">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
