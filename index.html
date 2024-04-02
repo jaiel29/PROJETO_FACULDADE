@@ -3,13 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Lanchonete</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 <style>
     body {
         background-image: url('https://jaiel29.github.io/PROJETO_FACULDADE/Images/FUNDO-LANCHONETE.jpg');
-        background-color: #ff7f7f; /* Cor de fundo vermelha */
-        background-blend-mode: multiply; /* Integra a cor de fundo com a img */
-        background-size: cover; /* Fazz com que a imagem de fundo cubra toda a tela */
-        background-repeat: no-repeat; /* faz com que a img de fundo se repita */
+        background-color: #ff7f7f;
+        background-blend-mode: multiply;
+        background-size: cover;
+        background-repeat: no-repeat;
         font-family: Arial, sans-serif;
         display: flex;
         flex-direction: column;
@@ -18,60 +20,169 @@
         height: 100vh;
         margin: 0;
     }
-    .botao-iniciar, .info {
-        border: 2px solid black; /* Bordas pretas */
-        margin: 10px;
+    .cabecalho {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: rgba(255, 230, 230, 0.8);
         padding: 20px;
-        border-radius: 5px; /* Bordas arredondadas */
-        box-shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.25); /* Sombra para as caixas */
-        background-color: #ffe6e6; /* Fundo claro para contraste */
-        width: 300px; /* Largura fixa para as caixas */
         text-align: center;
-        transition: box-shadow 0.3s ease-in-out; /* Transição suave para a sombra */
+        z-index: 999;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
     }
-    .botao-iniciar:hover, .info:hover {
-        box-shadow: 6px 6px 7px 0 rgba(0, 0, 0, 0.45); /* Sombra maior ao passar o mouse */
-    }
-    .botao-iniciar button {
-        padding: 10px 20px;
-        font-size: 16px;
-        cursor: pointer; /* Cursor em forma de mão ao passar sobre o botão */
+    .cabecalho button, .cabecalho a {
+        padding: 15px 25px; /* Aumenta o tamanho dos botões */
+        font-size: 18px; /* Aumenta o tamanho da fonte dos botões */
+        cursor: pointer;
         border: none;
         border-radius: 5px;
-        background-color: #ff4d4d; /* Cor de fundo vermelho para o botão */
-        color: white; /* Cor do texto do botão */
-        box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.25); /* Sombra para o botão */
+        background-color: #ff4d4d;
+        color: white;
+        box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.25);
+        margin: 0 10px; /* Aumenta o espaço entre os botões */
+        text-decoration: none;
     }
-    a {
-        text-decoration: none; /* Remove o sublinhado dos links */
-        color: black; /* Cor do texto dos links */
+    .cabecalho a:hover {
+        color: white;
+        background-color: #e63946;
     }
-    a:hover {
-        color: #555; /* Cor do texto dos links ao passar o mouse */
+
+    /* Estilo da bolha redonda */
+    .logo-container {
+        background-color: #fff; /* Cor de fundo da bolha */
+        width: 120px; /* Aumenta o tamanho da bolha */
+        height: 120px; /* Aumenta o tamanho da bolha */
+        border-radius: 50%; /* Formato de bolha redonda */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden; /* Garante que a imagem não ultrapasse os limites da bolha */
+        margin-right: 20px; /* Aumenta o espaço entre a bolha e os botões */
+    }
+
+    .logo-container img {
+        max-width: 100%; /* Ajusta o tamanho da imagem para caber na bolha */
+        max-height: 100%;
+        object-fit: cover; /* Mantém a proporção da imagem e corta o excesso */
+    }
+
+    .contato-btn {
+        position: relative;
+    }
+    .contato {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 200px;
+        background-color: #ffe6e6;
+        border: 2px solid black;
+        border-radius: 5px;
+        padding: 10px;
+        text-align: left;
+        box-shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.25);
+    }
+    .contato-btn:hover .contato {
+        display: block;
+    }
+    .contato a {
+        display: block;
+        margin-bottom: 5px;
+        color: black;
+        text-decoration: none;
+    }
+    .contato a:hover {
+        color: #555;
+    }
+
+    /* Estilos para o carrossel */
+    .owl-carousel {
+        width: 70%; /* Ajusta a largura do carrossel */
+        max-width: 1200px; /* Largura máxima para telas grandes */
+        margin: 150px auto 20px; /* Aumenta a margem do carrossel */
+    }
+    .owl-carousel .item img {
+        width: 100%;
+        height: 70vh; /* Altura proporcional à tela */
+        object-fit: cover; /* Mantém a proporção da imagem */
+        border-radius: 5px;
     }
 </style>
-<script>
-function iniciarPedido() {
-    window.location.href = "https://jaiel29.github.io/PROJETO_FACULDADE/Tela_Iniciar_Pedido.html"; // Redireciona para a página iniciar-pedido.html
-}
-</script>
 </head>
 <body>
 
-<!-- Botão para iniciar o pedido -->
-<div class="botao-iniciar">
+<!-- Cabeçalho com botões de ação -->
+<div class="cabecalho">
+    <div class="logo-container">
+        <img src="https://jaiel29.github.io/PROJETO_FACULDADE/Images/logo.png" alt="Logo">
+    </div>
     <button onclick="iniciarPedido()">Iniciar o Pedido</button>
+    <a href="https://maps.app.goo.gl/ntSYEjiHQKQoR4uQ6" target="_blank">Venha até nós</a>
+    <div class="contato-btn">
+        <button>Contato</button>
+        <div class="contato">
+            <a href="https://wa.me/5513996613096" target="_blank">WhatsApp</a>
+            <a href="mailto:contato@johabe.com.br">E-mail</a>
+        </div>
+    </div>
 </div>
 
-<!-- Endereço com link para o Google Maps -->
-<div class="info">
-    <p>Endereço: <a href="https://maps.app.goo.gl/ntSYEjiHQKQoR4uQ6" target="_blank">Av. Dr. Adolpho Pinto, 109 - Barra Funda, São Paulo - SP, 01156-050</a></p>
+<!-- Carrossel de promoções -->
+<div class="owl-carousel owl-theme">
+    <div class="item">
+        <img src="https://jaiel29.github.io/PROJETO_FACULDADE/Images/Ofertas_Relampago.jpg" alt="Promoção 1">
+        <p>Descrição da Promoção 1</p>
+    </div>
+    <div class="item">
+        <img src="https://jaiel29.github.io/PROJETO_FACULDADE/Images/Ofertas_Relampago.jpg" alt="Promoção 2">
+        <p>Descrição da Promoção 2</p>
+    </div>
+    <div class="item">
+        <img src="https://jaiel29.github.io/PROJETO_FACULDADE/Images/Ofertas_Relampago.jpg" alt="Promoção 3">
+        <p>Descrição da Promoção 3</p>
+    </div>
+    <div class="item">
+        <img src="https://jaiel29.github.io/PROJETO_FACULDADE/Images/Ofertas_Relampago.jpg" alt="Promoção 4">
+        <p>Descrição da Promoção 4</p>
+    </div>
+    <!-- Adicione mais itens conforme necessário -->
 </div>
 
-<!-- Número de telefone com link para o WhatsApp -->
-<div class="info">
-    <p>Telefone: <a href="https://wa.me/5513996613096" target="_blank">+55 13 99661-3096</a></p>
-</div>
+<!-- Script de inicialização do Owl Carousel -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $(".owl-carousel").owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            autoplay: true, // Autoplay adicionado para fazer o carrossel passar automaticamente
+            autoplayTimeout: 5000, // Tempo de espera entre os slides (em milissegundos)
+            responsive:{
+                0:{
+                    items: 1
+                },
+                600:{
+                    items: 1 // Ajuste para mostrar apenas um item em telas menores
+                },
+                1000:{
+                    items: 1
+                },
+                1200:{
+                    items: 1
+                }
+            }
+        });
+    });
+</script>
 
+<script>
+    function iniciarPedido() {
+        window.location.href = "https://jaiel29.github.io/PROJETO_FACULDADE/Tela_Iniciar_Pedido.html";
+    }
+</script>
 </body>
 </html>
