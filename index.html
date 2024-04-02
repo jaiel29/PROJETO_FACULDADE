@@ -43,10 +43,11 @@
         box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.25);
         margin: 0 10px; /* Aumenta o espaço entre os botões */
         text-decoration: none;
-        transition: background-color 0.3s ease; /* Adiciona transição suave na mudança de cor */
+        transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Adiciona transição suave na mudança de cor e sombra */
     }
     .cabecalho button:hover, .cabecalho a:hover {
         background-color: #e63946; /* Altera a cor ao passar o mouse */
+        box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.5); /* Adiciona sombra ao passar o mouse */
     }
 
     /* Estilo da bolha redonda */
@@ -119,7 +120,7 @@
     <div class="logo-container">
         <img src="https://jaiel29.github.io/PROJETO_FACULDADE/Images/logo.png" alt="Logo">
     </div>
-    <button onclick="iniciarPedido()" onmouseover="this.style.backgroundColor='#e63946';" onmouseout="this.style.backgroundColor='#ff4d4d';">Iniciar o Pedido</button>
+    <button onclick="iniciarPedido()">Iniciar o Pedido</button>
     <a href="https://maps.app.goo.gl/ntSYEjiHQKQoR4uQ6" target="_blank">Venha até nós</a>
     <div class="contato-btn">
         <button>Contato</button>
