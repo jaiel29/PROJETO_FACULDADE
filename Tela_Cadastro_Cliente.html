@@ -6,22 +6,27 @@
 <title>Cadastro de Cliente - Lanchonete</title>
 <style>
     body {
+        background-image: url('https://jaiel29.github.io/PROJETO_FACULDADE/Images/FUNDO-LANCHONETE.jpg');
         background-color: #ff7f7f; /* Cor de fundo alterada para vermelho mais leve */
+        background-blend-mode: multiply;
+        background-size: cover;
+        background-repeat: no-repeat;
         font-family: Arial, sans-serif;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        min-height: 100vh;
         margin: 0;
         padding: 20px; /* Adiciona uma margem ao corpo do documento */
     }
     .cadastro-container {
-        background-color: #fff0f5; /* Fundo claro para contraste */
+        background-color: rgba(255, 255, 255, 0.9); /* Fundo claro para contraste */
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0 4px 6px rgba(255, 127, 127, 0.1), 0 1px 3px rgba(255, 127, 127, 0.08); /* Sombra vermelha mais leve */
         text-align: center;
-        width: 400px;
+        max-width: 90%; /* Define a largura máxima da caixa */
+        width: 400px; /* Define uma largura padrão para a caixa */
     }
     input, button {
         width: calc(100% - 22px); /* Reduz a largura para compensar o padding */
@@ -29,7 +34,7 @@
         margin: 10px 0;
         border-radius: 5px;
         border: 1px solid #ddd;
-        box-shadow: 0 2px 4px rgba(255, 127, 127, 0.1); /* Sombra vermelha mais leve */
+        transition: transform 0.2s ease-in-out; /* Transição suave no hover */
     }
     input:focus {
         outline: none;
@@ -40,9 +45,11 @@
         background-color: #ff7f7f; /* Cor de fundo alterada para vermelho mais leve */
         color: white;
         cursor: pointer;
-        box-shadow: 0 2px 4px rgba(127, 63, 63, 0.2), 0 1px 2px rgba(127, 63, 63, 0.1);
+        transition: transform 0.2s ease-in-out; /* Transição suave no hover */
+        width: 100%; /* Botão com mesma largura das caixas de texto */
     }
     button[type="submit"]:hover {
+        transform: translateY(-5px); /* Movimento para cima ao passar o mouse */
         box-shadow: 0 4px 8px rgba(127, 63, 63, 0.2), 0 2px 4px rgba(127, 63, 63, 0.1); /* Sombra ao passar o mouse */
     }
     /* Estilo para caixa de informações */
