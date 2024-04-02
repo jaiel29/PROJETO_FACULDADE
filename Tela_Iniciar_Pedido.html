@@ -5,7 +5,11 @@
 <title>Redirecionamento - Lanchonete</title>
 <style>
     body {
+        background-image: url('https://jaiel29.github.io/PROJETO_FACULDADE/Images/FUNDO-LANCHONETE.jpg');
         background-color: #ff7f7f; /* Cor de fundo vermelha */
+        background-blend-mode: multiply;
+        background-size: cover;
+        background-repeat: no-repeat;
         font-family: Arial, sans-serif;
         display: flex;
         justify-content: center;
@@ -35,18 +39,39 @@
         cursor: pointer;
         text-decoration: none;
         box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.25); /* Sombra para o botão */
+        transition: transform 0.2s ease-in-out; /* Transição suave para a transformação */
+        width: 200px; /* Largura fixa para os botões */
     }
     .button:hover {
         background-color: #c73838; /* Cor de fundo mais escura ao passar o mouse */
+        transform: translateY(-3px); /* Desliza para cima ao passar o mouse */
+    }
+    .logo-container {
+        background-color: #fff; /* Cor de fundo da bolha */
+        width: 120px; /* Tamanho da bolha */
+        height: 120px; /* Tamanho da bolha */
+        border-radius: 50%; /* Formato de bolha redonda */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden; /* Garante que a imagem não ultrapasse os limites da bolha */
+        margin: 0 auto 20px auto; /* Centraliza a bolha e define a margem inferior */
+    }
+    .logo-container img {
+        max-width: 100%;
+        height: auto;
     }
 </style>
 </head>
 <body>
 <div class="container">
+    <div class="logo-container">
+        <img src="https://jaiel29.github.io/PROJETO_FACULDADE/Images/logo.png" alt="Logo">
+    </div>
     <h2>Bem-vindo à Lanchonete</h2>
     <p>Por favor, selecione uma opção:</p>
     <a href="https://jaiel29.github.io/PROJETO_FACULDADE/Tela_Login.html" class="button">Já sou cliente</a>
-    <a href="https://jaiel29.github.io/PROJETO_FACULDADE/Tela_Cadastro_Cliente.html" class="button">Ainda não sou cliente</a>
+    <a href="https://jaiel29.github.io/PROJETO_FACULDADE/Tela_Cadastro_Cliente.html" class="button">Não sou cliente</a>
 </div>
 </body>
 </html>
